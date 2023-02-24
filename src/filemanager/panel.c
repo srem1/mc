@@ -89,25 +89,6 @@ hook_t *select_file_hook = NULL;
 panelized_panel_t panelized_panel = { {NULL, 0, -1, NULL}, NULL };
 /* *INDENT-ON* */
 
-static const char *string_file_name (file_entry_t *, int);
-static const char *string_file_size (file_entry_t *, int);
-static const char *string_file_size_brief (file_entry_t *, int);
-static const char *string_file_type (file_entry_t *, int);
-static const char *string_file_mtime (file_entry_t *, int);
-static const char *string_file_atime (file_entry_t *, int);
-static const char *string_file_ctime (file_entry_t *, int);
-static const char *string_file_permission (file_entry_t *, int);
-static const char *string_file_perm_octal (file_entry_t *, int);
-static const char *string_file_nlinks (file_entry_t *, int);
-static const char *string_inode (file_entry_t *, int);
-static const char *string_file_nuid (file_entry_t *, int);
-static const char *string_file_ngid (file_entry_t *, int);
-static const char *string_file_owner (file_entry_t *, int);
-static const char *string_file_group (file_entry_t *, int);
-static const char *string_marked (file_entry_t *, int);
-static const char *string_space (file_entry_t *, int);
-static const char *string_dot (file_entry_t *, int);
-
 mc_fhl_t *mc_filehighlight = NULL;
 
 /*** file scope macro definitions ****************************************************************/
@@ -159,6 +140,27 @@ typedef enum
     FILENAME_SCROLL_LEFT = 2,
     FILENAME_SCROLL_RIGHT = 4
 } filename_scroll_flag_t;
+
+/*** forward declarations (file scope functions) *************************************************/
+
+static const char *string_file_name (file_entry_t *fe, int len);
+static const char *string_file_size (file_entry_t *fe, int len);
+static const char *string_file_size_brief (file_entry_t *fe, int len);
+static const char *string_file_type (file_entry_t *fe, int len);
+static const char *string_file_mtime (file_entry_t *fe, int len);
+static const char *string_file_atime (file_entry_t *fe, int len);
+static const char *string_file_ctime (file_entry_t *fe, int len);
+static const char *string_file_permission (file_entry_t *fe, int len);
+static const char *string_file_perm_octal (file_entry_t *fe, int len);
+static const char *string_file_nlinks (file_entry_t *fe, int len);
+static const char *string_inode (file_entry_t *fe, int len);
+static const char *string_file_nuid (file_entry_t *fe, int len);
+static const char *string_file_ngid (file_entry_t *fe, int len);
+static const char *string_file_owner (file_entry_t *fe, int len);
+static const char *string_file_group (file_entry_t *fe, int len);
+static const char *string_marked (file_entry_t *fe, int len);
+static const char *string_space (file_entry_t *fe, int len);
+static const char *string_dot (file_entry_t *fe, int len);
 
 /*** file scope variables ************************************************************************/
 
